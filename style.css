@@ -1,0 +1,30 @@
+.margin {
+  margin: 0 auto;
+}
+#canvas {
+  margin-top: 40px;
+  margin-left: 20px;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+}
+
+#board {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  border: 7px solid white;
+}
+.square {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: #ff8000;
+}
+.player {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 1px solid;
+}

@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+
+        color: grey;
+      }
+      h2 {
+        font-family: "Avenir";
+      }
+    </style>
+
+    <title>BoardGame1</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav
+      style="background-color:#ff9900"
+      class="navbar navbar-expand-lg navbar-dark "
+    >
+      <a class="navbar-brand" href="index.html">HT</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="board.html">Game Boards</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div id="coins"></div>
+    <h1 style="text-align:center;margin-top:60px">Steps To Play</h1>
+    <div data-aos="zoom-in" class="row">
+      <div class="col"></div>
+      <div class="col">
+        <div
+          style="background-color:#ff9900;margin-left:20px;height:200px;margin-top:100px;;border:1px solid white;border-radius:20px"
+          class="card text-white  mb-3"
+          style="max-width: 18rem;"
+        >
+          <div style="" class="card-header">Step1</div>
+          <div class="card-body">
+            <p class="card-text">
+              Start the game , Roll the dice
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div
+          style="margin-left:20px;height:200px;margin-top:100px;;border:1px solid grey;border-radius:20px"
+          class="card text  mb-3"
+          style="max-width: 18rem;"
+        >
+          <div class="card-header">Step 2</div>
+          <div class="card-body">
+            <p class="card-text">
+              Encountering any tile with date look for the quick read go through
+              it inorder to understand about that event to enhance the knowledge
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col"></div>
+    </div>
+    <div data-aos="zoom-in" class="row">
+      <div class="col"></div>
+      <div class="col">
+        <div
+          style="margin-left:20px;height:200px;border:1px solid grey;border-radius:20px"
+          class="card text  mb-3"
+          style="max-width: 18rem;"
+        >
+          <div class="card-header">Step 3</div>
+          <div class="card-body">
+            <p class="card-text">
+              Take up the quiz attached with board game inorder to check for
+              knowledge
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div
+          style="background-color:#ff9900;margin-left:20px;height:200px;height:200px;margin-top:0px;border:1px solid white;border-radius:20px"
+          class="card text-white  mb-3"
+          style="max-width: 18rem"
+        >
+          <div class="card-header">Step 4</div>
+          <div class="card-body">
+            <p class="card-text">
+              Get the correct answer for the quiz to earn coins for unlocking
+              further new game boards
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col"></div>
+    </div>
+    <h1 style="margin-top:150px;text-align:center">
+      Let's Start The Game
+    </h1>
+    <div data-aos="fade-right" class="row">
+      <div class="col-6">
+        <button
+          style="margin-top:660px;margin-left:320px"
+          onclick="rollDice()"
+          type="button"
+          class="btn btn-outline-success"
+        >
+          Roll Dice
+        </button>
+
+        <div id="board"></div>
+
+        <canvas id="canvas" width="550" height="600"></canvas>
+      </div>
+      <div class="col-6">
+        <div style="margin-left:30px" class="container">
+          <h2 style="margin-top:50px">Message</h2>
+          <div id="message"></div>
+        </div>
+
+        <div style="margin-left:30px" id="text"></div>
+      </div>
+    </div>
+    <hr
+      style="width:40%;border:5px solid white;border-radius:20px;margin-top:70px;margin-bottom:70px"
+    />
+    <div class="container">
+      <h2 style="margin:30px 0;text-align:center">Important Notes</h2>
+
+      <div data-aos="fade-up" class="accordion" id="accordionExample">
+        <div class="card">
+          <div class="card-header" id="headingSix">
+            <h2 class="mb-0">
+              <button
+                class="btn btn-link"
+                type="button"
+                data-toggle="collapse"
+                data-target="#collapseSix"
+                aria-expanded="true"
+                aria-controls="collapseSix"
+              >
+                <h5 class="mt-0 mb-1">The Tennis Court Oath – June 20, 1789</h5>
+              </button>
+            </h2>
+          </div>
+
+          <div
+            id="collapseSix"
+            class="collapse show"
+            aria-labelledby="headingSix"
+            data-parent="#accordionExample"
+          >
+            <div class="card-body">
+              <img src="1.webp" class="mr-3" alt="..." />
+              <div class="media-body">
+                The Estates General was the general assembly of France. It was
+                divided into three estates: the clergy (First Estate), the
+                nobility (Second Estate) and the rest of the population (Third
+                Estate). The Estates General had last met in 1614 but it was
+                summoned by King Louis XVI in May 1789 as the nation was facing
+                a severe financial crisis. Each estate had only one vote. Thus,
+                though the Third Estate comprised of more than 98% of the French
+                population, it was usually overruled by the nobility and the
+                clergy. In the lead up to the meeting of the Estates General on
+                May 5, the Third Estate gathered support for equal
+                representation but the negotiation with the other two estates
+                failed. In response, the Third Estate decided to form their own
+                National Assembly. On June 20, 1789, Louis XVI ordered the
+                closure of the Salle des États where the Assembly met. The Third
+                Estate moved to an indoor tennis court where they pledged not to
+                separate until they had given France a constitution. This became
+                known as the Tennis Court Oath.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <h2 class="mb-0">
+              <button
+                class="btn btn-link collapsed"
+                type="button"
+                data-toggle="collapse"
+                data-target="#collapseTwo"
+                aria-expanded="false"
+                aria-controls="collapseTwo"
+              >
+                <h5 class="mt-0 mb-1">
+                  Storming of the Bastille – July 14, 1789
+                </h5>
+              </button>
+            </h2>
+          </div>
+          <div
+            id="collapseTwo"
+            class="collapse"
+            aria-labelledby="headingTwo"
+            data-parent="#accordionExample"
+          >
+            <div class="card-body">
+              <div class="media-body">
+                As the National Constituent Assembly continued to meet at
+                Versailles, soldiers, mostly foreign mercenaries, began to
+                arrive in Paris. Also, Jacques Necker, director-general of the
+                finances who was considered sympathetic to the common people,
+                was dismissed by King Louis XVI. The Parisians interpreted these
+                actions as an attempt toward shutting down the National
+                Constituent Assembly. They responded by storming toward the
+                Bastille fortress on July 14, 1789, to secure gunpowder and
+                weapons. The troops at Bastille resisted for a few hours before
+                they surrendered to the mob. The fall of the Bastille, a symbol
+                of power and the monarchy’s dictatorial rule, is considered by
+                some as the start of the French Revolution. It resulted in King
+                Louis XVI withdrawing the royal troops from the French capital
+                and recalling finance minister Jacques Necker. Due to the
+                significance of the Storming of the Bastille, July 14 is
+                celebrated as the national day of France. It is known as
+                Bastille Day in English.
+              </div>
+              <img
+                src="https://www.learnodo-newtonic.com/wp-content/uploads/2015/06/Storming-of-the-Bastille-by-Jean-Pierre-Houel.webp"
+                class="mr-3"
+                alt="..."
+              />
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingThree">
+            <h2 class="mb-0">
+              <button
+                class="btn btn-link collapsed"
+                type="button"
+                data-toggle="collapse"
+                data-target="#collapseThree"
+                aria-expanded="false"
+                aria-controls="collapseThree"
+              >
+                <h5 class="mt-0 mb-1">
+                  Abolition of Feudalism – August 4, 1789
+                </h5>
+              </button>
+            </h2>
+          </div>
+          <div
+            id="collapseThree"
+            class="collapse"
+            aria-labelledby="headingThree"
+            data-parent="#accordionExample"
+          >
+            <div class="card-body">
+              <img
+                src="https://www.learnodo-newtonic.com/wp-content/uploads/2018/11/Meeting-on-August-4-1789-during-which-Feudalism-was-abolished-Painting-by-Charles-Monnet.webp"
+                class="mr-3"
+                alt="..."
+              />
+              <div class="media-body">
+                On 4 and 11 August, 1789, the Constituent Assembly abolished the
+                entire feudal system. It abolished both Manorialism of the
+                Second Estate and the tithes gathered by the First Estate.
+                Manorialism was an integral part of feudalism by which peasants
+                were rendered dependent on their land and on their lord. Tithes
+                was one tenth of annual produce or earnings taken as a tax for
+                the support of the church. Thus the peasants got their land free
+                and also no longer paid the tithe to the church. Other proposals
+                followed with the same success: the equality of legal
+                punishment, admission of all to public office, abolition of
+                venality in office and freedom of worship. Thus during the
+                course of a few hours, nobles, clergy, towns, provinces,
+                companies and cities lost their special privileges.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingFour">
+            <h2 class="mb-0">
+              <button
+                class="btn btn-link collapsed"
+                type="button"
+                data-toggle="collapse"
+                data-target="#collapseFour"
+                aria-expanded="false"
+                aria-controls="collapseFour"
+              >
+                <h5 class="mt-0 mb-1">
+                  Women’s March on Versailles – October 5, 1789
+                </h5>
+              </button>
+            </h2>
+          </div>
+          <div
+            id="collapseFour"
+            class="collapse"
+            aria-labelledby="headingFour"
+            data-parent="#accordionExample"
+          >
+            <div class="card-body">
+              <div class="media-body">
+                Bad harvests in France had caused the price of flour to increase
+                dramatically, which in turn raised the price of bread, the
+                staple food of most French citizens. Many people in Paris were
+                thus hungry and restless. On 5th October 1789, a large crowd of
+                protesters, mostly women, began to assemble at Parisian markets.
+                After getting unsatisfactory responses from city officials, the
+                women marched from Paris to the Palace of Versailles. They were
+                convinced that the royal family lived in luxury oblivious to the
+                problems of the common people. They stormed the palace, killing
+                several guards and demanded the king to “live among the people”.
+                Louis XVI ultimately conceded to their demands and agreed to go
+                to Paris with the mob. The royal family in Paris was placed
+                under the “protection” of the National Guards, thus legitimizing
+                the National Assembly.
+              </div>
+              <img
+                style="width:600px"
+                src="https://www.learnodo-newtonic.com/wp-content/uploads/2018/11/Womens-March-on-Versailles-a-major-event-of-the-French-Revolution-caused-due-to-the-increase-in-price-of-bread.webp"
+                class="mr-3"
+                alt="..."
+              />
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingFive">
+            <h2 class="mb-0">
+              <button
+                class="btn btn-link collapsed"
+                type="button"
+                data-toggle="collapse"
+                data-target="#collapseFive"
+                aria-expanded="false"
+                aria-controls="collapseFive"
+              >
+                <h5 class="mt-0 mb-1">
+                  Declaration of the Rights of Man and of the Citizen – August
+                  26, 1789
+                </h5>
+              </button>
+            </h2>
+          </div>
+          <div
+            id="collapseFive"
+            class="collapse"
+            aria-labelledby="headingFive"
+            data-parent="#accordionExample"
+          >
+            <div class="card-body">
+              <img
+                style="height:400px"
+                src="https://www.learnodo-newtonic.com/wp-content/uploads/2018/11/The-Declaration-of-the-Rights-of-Man-and-of-the-Citizen-Painting-by-Jean-Jacques-Francois-Le-Barbier.webp"
+                class="mr-3"
+                alt="..."
+              />
+              <div style="margin-top:40px" class="media-body">
+                On 26th August 1789, the Assembly published the Declaration of
+                the Rights of Man and of the Citizen, a charter of human
+                liberties, containing the principles that inspired the French
+                Revolution. The basic principle of the Declaration was that all
+                “men are born and remain free and equal in rights”. Its 17
+                articles served as the preamble to the Constitution. The long
+                awaited constitution finally came into effect on September 30,
+                1791. France was proclaimed a constitutional monarchy, while the
+                National Assembly was dissolved and replaced by a new political
+                body named the Legislative Assembly. King Louis XVI became a
+                little more than a figurehead. He was forced to swear an oath to
+                the constitution and a decree that declared that retracting the
+                oath, heading an army for the purpose of making war upon the
+                nation or permitting anyone to do so in his name would amount to
+                abdication.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="text-align: center;margin-top:40px">
+        <a href="quiz.html" style="color:white"
+          ><button href="quiz.html" type="button" class="btn btn-primary">
+            Take Quiz
+          </button>
+        </a>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  </body>
+  <script src="index.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</html>
